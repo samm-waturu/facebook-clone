@@ -42,7 +42,7 @@ export interface SideProps {
     alt?: string;
 }
 
-export interface SideCards {
+export interface CardProps {
     name?: string;
     src?: string;
     prof?: string;
