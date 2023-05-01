@@ -5,7 +5,7 @@ Facebook clone is a stripped down version of facebook, demonstrating basic socia
 It features realtime chat capabilities, one way only, and picture upload. One can also sign up using Google, however, i initially implemented authentication using meta's auth API, version difference between Meta's API and Next/Auth Facebook API proved an issue.
 
 
-## Getting Started
+## Getting started locally
 
 First, run the development server:
 
