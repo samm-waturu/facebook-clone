@@ -44,7 +44,7 @@ export interface SideProps {
 
 export interface CardProps {
     name?: string;
-    src?: string;
-    prof?: string;
+    src?: any;
+    profile?: any;
 
 }

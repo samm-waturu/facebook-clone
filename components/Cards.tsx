@@ -1,5 +1,5 @@
 import React from 'react'
-import CardProps from '../typings'
+import {CardProps} from '../typings'
 import Image from "next/legacy/image";
 
 
