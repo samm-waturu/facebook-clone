@@ -2,6 +2,7 @@ import React from 'react'
 import Stories from "./Stories";
 import InputBox from "./InputBox";
 import Posts from "./Posts";
+import {PostsProps} from "../typings";
 
 function Feed({posts}) {
     return (

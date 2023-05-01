@@ -5,7 +5,6 @@ Facebook clone is a stripped down version of facebook, demonstrating basic socia
 It features realtime chat capabilities, one way only, and picture upload. One can also sign up using Google, however, i initially implemented authentication using meta's auth API, version difference between Meta's API and Next/Auth Facebook API proved an issue.
 
 
-
 ## Getting Started
 
 First, run the development server:
@@ -27,3 +26,9 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Issues
+
+In case of any issue reach me at velop.acc@gmail.com my dev email account
+
+Currently, I am facing deployment to Vercel due to Typescript errors. but i'll fix it. The project is working fine locally

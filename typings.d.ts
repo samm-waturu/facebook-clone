@@ -11,7 +11,7 @@ export interface Contacts {
     active: any;
 }
 
-export interface Posts {
+export interface PostsProps {
     name: string;
     message: string;
     postImage: string;
