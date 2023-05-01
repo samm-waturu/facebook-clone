@@ -1,0 +1,24 @@
+/*
+
+A NEXT AUTH BUTTON USE CASE
+
+import { useSession, signIn, signOut } from "next-auth/react"
+
+export default function LoginBtn() {
+    const { data: session } = useSession()
+    if (session) {
+        return (
+            <>
+                Signed in as {session.user?.email}
+                <button onClick={() => signOut()}>Sign out</button>
+            </>
+        )
+    }
+    return (
+        <>
+            <button className={'p-5 mt-10 bg-blue-500 rounded-full text-white text-center cursor-pointer'} onClick={() => signIn()}>Login with Facebook</button>
+        </>
+    )
+}
+
+*/
