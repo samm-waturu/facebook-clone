@@ -4,21 +4,19 @@ import {useSession, signIn, signOut} from "next-auth/react"
 import {
     BellIcon,
     ChatBubbleBottomCenterIcon,
-    ChevronDownIcon,
     HomeIcon,
     UserGroupIcon,
     ArrowRightOnRectangleIcon,
     ArrowLeftOnRectangleIcon,
     ViewColumnsIcon
 } from "@heroicons/react/20/solid";
-
+import PlaceHolder from '../dummy.png'
 import {
-    FlagIcon,
     PlayIcon,
     MagnifyingGlassIcon,
-    ShoppingCartIcon
 } from "@heroicons/react/24/outline";
 import HeaderProps from "./HeaderProps";
+
 
 function Header() {
 
@@ -48,10 +46,7 @@ function Header() {
                             <HeaderProps Icon={HomeIcon} active={true} />
                             <HeaderProps Icon={UserGroupIcon} />
                             <HeaderProps Icon={PlayIcon} />
-
                         </>
-
-
                             )
                         : null
                     }
@@ -66,14 +61,15 @@ function Header() {
                 {/*  Instead of creating a new component
                  prop We are utilising reusable
                   tailwind utilities */}
-
                 {session ? (
                     <>
                     <ViewColumnsIcon className={'icon'}/>
                     <ChatBubbleBottomCenterIcon className={'icon'}/>
                     <BellIcon className={'icon'}/>
-                    <Image src={session?.user?.image}  alt={session?.user?.name}
-                           width={'40'} height={'40'} className={'icon'} />
+                    <Image src={session && session.user?.image || `${PlaceHolder}`}
+                           alt={session && session.user?.image || 'no image attribute available'}
+                           width={'40'} height={'40'}
+                           className={'icon'} />
                     </>
                 ) : null}
                 <div className={'pl-4'}>

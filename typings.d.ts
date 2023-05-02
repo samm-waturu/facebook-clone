@@ -38,8 +38,8 @@ export interface Sess {
 export interface SideProps {
     Icon?: any;
     title?: string;
-    src?: string;
-    alt?: string;
+    src?: any;
+    alt?: any;
 }
 
 export interface CardProps {
