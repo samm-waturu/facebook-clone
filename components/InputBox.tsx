@@ -1,15 +1,11 @@
 import React, {useRef, useState} from 'react'
-import Image from "next/legacy/image";
 import {useSession} from "next-auth/react";
 import {initDb} from "../firebase.config";
-import firebase from "firebase/compat/app";
 import {CameraIcon, VideoCameraIcon, FaceSmileIcon} from "@heroicons/react/20/solid";
 import {ref, uploadString, getDownloadURL} from "firebase/storage";
 import {initStore} from "../firebase.config";
 import PlaceHolder from "../dummy.png";
 import {serverTimestamp} from "@firebase/firestore";
-
-
 
 
 export default function InputBox() {
