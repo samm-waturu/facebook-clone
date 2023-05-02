@@ -39,7 +39,7 @@ export interface SideProps {
     Icon?: any;
     title?: string;
     src?: any;
-    alt?: any;
+    alt?: string;
 }
 
 export interface CardProps {

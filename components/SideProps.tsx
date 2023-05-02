@@ -2,7 +2,7 @@ import React from 'react'
 import {SideProps} from "../typings";
 import Image from "next/image";
 
-function SideProps({Icon, title, src, alt}: SideProps) {
+function SideProps({Icon, title, src, alt}: SideProps | null) {
     return (
         <>
             <div className={'items-center space-x-2 p-4 '}>
