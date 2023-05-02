@@ -14,9 +14,9 @@ export interface Contacts {
 export interface AllPostsProps {
     name: string;
     message: string;
-    postImage: string;
+    postImage: any;
     timestamp: any
-    userImage: string
+    userImage: any
 }
 
 export interface PostProp {
