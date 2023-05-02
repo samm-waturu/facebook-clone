@@ -15,7 +15,7 @@ import {initDb} from "../../firebase.config";
 
 export default function Home({session, posts}) {
 
-    console.log(session)
+    // console.log(session)
 
     if (!session) return (
         <>
