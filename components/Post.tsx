@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/legacy/image'
-import Posts from '../typings'
+import {PostsProps} from '../typings'
 import PostProp from "./PostProp";
 import {HandThumbUpIcon, ChatBubbleLeftEllipsisIcon, ShareIcon} from "@heroicons/react/24/outline";
 
-function Post({name, message, userImage, postImage, timestamp}: Posts) {
+function Post({name, message, userImage, postImage, timestamp}: PostsProps) {
     return (
         <>
 

@@ -3,7 +3,7 @@ import {useCollection, useDocument} from "react-firebase-hooks/firestore";
 import {initDb} from "../firebase.config";
 import Post from "./Post";
 
-function Posts({posts}) {
+function Posts({posts}: any) {
         const [fetchPosts] = useCollection(
             initDb.collection('posts').orderBy('timestamp', 'desc')
         )

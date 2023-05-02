@@ -15,7 +15,7 @@ export interface PostsProps {
     name: string;
     message: string;
     postImage: string;
-    timestamp: string;
+    timestamp: any
     userImage: string
 }
 
