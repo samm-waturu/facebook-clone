@@ -4,7 +4,7 @@ import {AllPostsProps} from '../typings'
 import PostProp from "./PostProp";
 import {HandThumbUpIcon, ChatBubbleLeftEllipsisIcon, ShareIcon} from "@heroicons/react/24/outline";
 
-function Post({name, message, userImage, postImage, timestamp}: AllPostsProps) {
+function Post({name, message, userImage, postImage, timestamp}: AllPostsProps | null) {
     return (
         <>
 

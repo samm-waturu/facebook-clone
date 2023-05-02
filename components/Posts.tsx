@@ -4,8 +4,8 @@ import {initDb} from "../firebase.config";
 import Post from "./Post";
 
 function Posts({posts}: any) {
-        const [fetchPosts] = useCollection<any>(
-            initDb.collection('posts').orderBy('timestamp', 'desc')
+        const [fetchPosts] = useCollection(
+            initDb.collection<any>('posts').orderBy('timestamp', 'desc')
         )
 
     return (

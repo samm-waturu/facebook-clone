@@ -12,7 +12,9 @@ import Feed from "../../components/Feed";
 
 import Widgets from "../../components/Widgets";
 
-import {initDb} from "../../firebase.config";
+import {initDb} from "../../firebase.config"
+
+
 
 export default function Home({session, posts}) {
 
@@ -70,10 +72,10 @@ export async function getServerSideProps(context) {
     const session = await getServerSession(context.req, context.res)
 
     // reads db stores old data updates with new
-    const posts = await initDb.collection('posts').orderBy( 'timestamp', 'desc').get()
+    const posts = await initDb.collection<any>('posts').orderBy('timestamp', 'desc').get()
 
     const docs = posts.docs.map(post => ({
-            id: post.id,
+        id: post.id,
         ...post.data(),
         timestamp: null
 
