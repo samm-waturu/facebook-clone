@@ -6,17 +6,19 @@ import firebase from "firebase/compat/app";
 import {CameraIcon, VideoCameraIcon, FaceSmileIcon} from "@heroicons/react/20/solid";
 import {ref, uploadString, getDownloadURL} from "firebase/storage";
 import {initStore} from "../firebase.config";
+import PlaceHolder from "../dummy.png";
+import {serverTimestamp} from "@firebase/firestore";
 
 
 
 
 export default function InputBox() {
 
-    const filePickerRef = useRef();
+    const filePickerRef = useRef<any>([]);
 
-    const [imgToPost, setImgToPost] = useState()
+    const [imgToPost, setImgToPost] = useState<any>()
 
-    const addImg = (e) => {
+    const addImg = (e: any) => {
 
         const reader = new FileReader();
         if(e.target.files[0]) {
@@ -32,13 +34,13 @@ export default function InputBox() {
         setImgToPost(null)
     }
 
-    const inputRef = useRef(null)
+    const inputRef = useRef<any>(null)
 
     //Data to DB logic section
 
     const {data: session} = useSession()
 
-    const sendPost = (e) => {
+    const sendPost = (e: any) => {
         e.preventDefault()
         if (!inputRef.current.value) return;
         initDb.collection('posts').add({
@@ -46,7 +48,7 @@ export default function InputBox() {
             name: session?.user?.name,
             email: session?.user?.email,
             userImg: session?.user?.image,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            timestamp: serverTimestamp()
         }).then(doc => {
             if(imgToPost) {
                 const storeRef = ref(initStore, `posts/${doc.id}`)
@@ -55,8 +57,6 @@ export default function InputBox() {
                     initDb.collection('posts').doc(doc.id).set({
                         postImg: url
                     }, {merge : true})
-
-
                     }
                 )
                 }).catch(() => {
@@ -75,8 +75,10 @@ export default function InputBox() {
             <div className={'bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-5'}>
 
                 <div className={'flex space-x-4 p-4 items-center'}>
-                    <img src={session?.user?.image}  alt={session?.user?.name}
-                         className={'rounded-full h-10 w-10' }/>
+                    <img src={session && session.user?.image || `${PlaceHolder}`} alt={session && session.user?.image || 'no image attribute available'}
+                           className={'rounded-full h-10 w-10'} />
+                <div/>
+
 
                     <>
                         <form className={'flex flex-1'}>

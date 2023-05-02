@@ -40,8 +40,6 @@ const provider = new firebase.auth.GoogleAuthProvider()
 
 import {signIn} from "next-auth/react";
 
-import {GetServerSideProps} from "next";
-
 function Login() {
 
     return (

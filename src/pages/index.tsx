@@ -11,6 +11,7 @@ import Sidebar from "../../components/Sidebar";
 import Feed from "../../components/Feed";
 
 import Widgets from "../../components/Widgets";
+
 import {initDb} from "../../firebase.config";
 
 export default function Home({session, posts}) {
