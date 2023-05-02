@@ -6,8 +6,6 @@ import {getServerSession} from "next-auth/next"
 
 import Login from "../../components/Login";
 
-import {authProvider} from "@/pages/api/auth/[...nextauth]";
-
 import Sidebar from "../../components/Sidebar";
 
 import Feed from "../../components/Feed";
@@ -68,7 +66,7 @@ export default function Home({session, posts}) {
 
 export async function getServerSideProps(context) {
 
-    const session = await getServerSession(context.req, context.res, authProvider)
+    const session = await getServerSession(context.req, context.res)
 
     // reads db stores old data updates with new
     const posts = await initDb.collection('posts').orderBy( 'timestamp', 'desc').get()
